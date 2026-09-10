@@ -54,21 +54,21 @@ public class StudyPlanner {
     }
 
     // Delete task
-    public void deleteTask(int taskId) {
+   public void deleteTask(int taskId) {
 
-        for (StudyTask task : tasks) {
+    for (int i = 0; i < tasks.size(); i++) {
 
-            if (task.getTaskId() == taskId) {
+        if (tasks.get(i).getTaskId() == taskId) {
 
-                tasks.remove(task);
+            tasks.remove(i);
 
-                System.out.println("Task deleted successfully.");
-                return;
-            }
+            System.out.println("Task deleted successfully.");
+            return;
         }
-
-        System.out.println("Task not found.");
     }
+
+    System.out.println("Task not found.");
+}
 
     // Count completed tasks
     public int getCompletedCount() {
