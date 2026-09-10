@@ -60,10 +60,12 @@ public class Main {
         scanner.close();
     }
 
-    // Main menu
+    // ================= MAIN MENU =================
+
     public static void displayMainMenu() {
 
-        System.out.println("\n============== MAIN MENU ==============");
+        System.out.println();
+        System.out.println("============== MAIN MENU ==============");
         System.out.println("1. Student Management");
         System.out.println("2. Academic Performance");
         System.out.println("3. Study Planner");
@@ -73,14 +75,16 @@ public class Main {
         System.out.println("=======================================");
     }
 
-    // Student management
+    // ================= STUDENT MANAGEMENT =================
+
     public static void studentManagement() {
 
         boolean back = false;
 
         while (!back) {
 
-            System.out.println("\n--------- STUDENT MANAGEMENT ---------");
+            System.out.println();
+            System.out.println("--------- STUDENT MANAGEMENT ---------");
             System.out.println("1. Add Student");
             System.out.println("2. View All Students");
             System.out.println("3. Search Student");
@@ -117,7 +121,6 @@ public class Main {
         }
     }
 
-    // Add student
     public static void addStudent() {
 
         int id = readInteger("Enter Student ID: ");
@@ -133,11 +136,13 @@ public class Main {
         int semester = readInteger("Enter Semester: ");
 
         if (!InputValidator.isValidStudentId(id)) {
+
             System.out.println("Student ID must be positive.");
             return;
         }
 
         if (!InputValidator.isValidName(name)) {
+
             System.out.println("Name cannot be empty.");
             return;
         }
@@ -148,7 +153,6 @@ public class Main {
         studentManager.addStudent(student);
     }
 
-    // Search student
     public static void searchStudent() {
 
         int id = readInteger("Enter Student ID to search: ");
@@ -158,7 +162,8 @@ public class Main {
 
         if (student != null) {
 
-            System.out.println("\nStudent found:");
+            System.out.println();
+            System.out.println("Student found:");
             student.displayInfo();
 
         } else {
@@ -167,7 +172,6 @@ public class Main {
         }
     }
 
-    // Delete student
     public static void deleteStudent() {
 
         int id = readInteger("Enter Student ID to delete: ");
@@ -175,14 +179,16 @@ public class Main {
         studentManager.deleteStudent(id);
     }
 
-    // Academic performance
+    // ================= ACADEMIC PERFORMANCE =================
+
     public static void academicPerformance() {
 
         boolean back = false;
 
         while (!back) {
 
-            System.out.println("\n------ ACADEMIC PERFORMANCE ------");
+            System.out.println();
+            System.out.println("------ ACADEMIC PERFORMANCE ------");
             System.out.println("1. Add Subject Marks");
             System.out.println("2. View Subject Marks");
             System.out.println("3. Calculate Performance");
@@ -214,7 +220,6 @@ public class Main {
         }
     }
 
-    // Add subject
     public static void addSubject() {
 
         scanner.nextLine();
@@ -227,19 +232,22 @@ public class Main {
         if (!InputValidator.isValidMarks(marks)) {
 
             System.out.println(
-                "Invalid marks. Marks must be between 0 and 100."
+                    "Invalid marks. Marks must be between 0 and 100."
             );
 
             return;
         }
+
+        Subject subject =
+                new Subject(name, marks);
 
         subjects.add(subject);
 
         FileManager.saveSubject(subject);
 
         System.out.println("Subject added successfully.");
+    }
 
-    // Display subjects
     public static void displaySubjects() {
 
         if (subjects.isEmpty()) {
@@ -248,7 +256,8 @@ public class Main {
             return;
         }
 
-        System.out.println("\n--------- SUBJECT MARKS ---------");
+        System.out.println();
+        System.out.println("--------- SUBJECT MARKS ---------");
 
         for (Subject subject : subjects) {
 
@@ -256,14 +265,16 @@ public class Main {
         }
     }
 
-    // Study planner menu
+    // ================= STUDY PLANNER =================
+
     public static void studyPlannerMenu() {
 
         boolean back = false;
 
         while (!back) {
 
-            System.out.println("\n---------- STUDY PLANNER ----------");
+            System.out.println();
+            System.out.println("---------- STUDY PLANNER ----------");
             System.out.println("1. Add Study Task");
             System.out.println("2. View Study Tasks");
             System.out.println("3. Mark Task Completed");
@@ -300,7 +311,6 @@ public class Main {
         }
     }
 
-    // Add study task
     public static void addStudyTask() {
 
         int id = readInteger("Enter Task ID: ");
@@ -319,7 +329,7 @@ public class Main {
         if (!InputValidator.isValidPriority(priority)) {
 
             System.out.println(
-                "Priority must be LOW, MEDIUM or HIGH."
+                    "Priority must be LOW, MEDIUM or HIGH."
             );
 
             return;
@@ -327,18 +337,17 @@ public class Main {
 
         StudyTask task =
                 new StudyTask(
-                    id,
-                    subject,
-                    description,
-                    priority.toUpperCase()
+                        id,
+                        subject,
+                        description,
+                        priority.toUpperCase()
                 );
 
-       studyPlanner.addTask(task);
+        studyPlanner.addTask(task);
 
-       FileManager.saveTask(task);
+        FileManager.saveTask(task);
     }
 
-    // Complete task
     public static void completeTask() {
 
         int id = readInteger("Enter Task ID: ");
@@ -346,7 +355,6 @@ public class Main {
         studyPlanner.completeTask(id);
     }
 
-    // Delete task
     public static void deleteTask() {
 
         int id = readInteger("Enter Task ID: ");
@@ -354,13 +362,14 @@ public class Main {
         studyPlanner.deleteTask(id);
     }
 
-    // Generate report
+    // ================= REPORT =================
+
     public static void generateReport() {
 
         if (studentManager.getStudentCount() == 0) {
 
             System.out.println(
-                "Please add a student before generating a report."
+                    "Please add a student before generating a report."
             );
 
             return;
@@ -384,7 +393,8 @@ public class Main {
         );
     }
 
-    // Read integer safely
+    // ================= INPUT HANDLING =================
+
     public static int readInteger(String message) {
 
         while (true) {
@@ -398,7 +408,7 @@ public class Main {
             } catch (Exception e) {
 
                 System.out.println(
-                    "Invalid input. Please enter a number."
+                        "Invalid input. Please enter a number."
                 );
 
                 scanner.nextLine();
@@ -406,7 +416,6 @@ public class Main {
         }
     }
 
-    // Read double safely
     public static double readDouble(String message) {
 
         while (true) {
@@ -420,7 +429,7 @@ public class Main {
             } catch (Exception e) {
 
                 System.out.println(
-                    "Invalid input. Please enter a number."
+                        "Invalid input. Please enter a number."
                 );
 
                 scanner.nextLine();
