@@ -233,13 +233,11 @@ public class Main {
             return;
         }
 
-        Subject subject =
-                new Subject(name, marks);
-
         subjects.add(subject);
 
+        FileManager.saveSubject(subject);
+
         System.out.println("Subject added successfully.");
-    }
 
     // Display subjects
     public static void displaySubjects() {
@@ -335,7 +333,9 @@ public class Main {
                     priority.toUpperCase()
                 );
 
-        studyPlanner.addTask(task);
+       studyPlanner.addTask(task);
+
+       FileManager.saveTask(task);
     }
 
     // Complete task
