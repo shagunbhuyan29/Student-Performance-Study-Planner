@@ -1,56 +1,91 @@
 # Project Statement
 
 ## Project Title
+
 Student Performance and Study Planner
 
-## Problem Statement
-Managing academic performance and study activities manually can make it difficult for students to identify weak subjects, track their marks, and organize their study tasks.
+## 1. Problem Statement
 
-The Student Performance and Study Planner is a Java-based console application designed to help students manage their academic information, record subject marks, analyze performance, and maintain a simple study plan.
+Students often manage their academic marks and study activities manually. This can make it difficult to keep track of subject performance, identify weaker subjects, and organize study tasks.
 
-## Objectives
-- Manage student information.
-- Store and display subject marks.
-- Calculate total marks and percentage.
-- Determine grades and performance levels.
-- Identify the best and focus subjects.
-- Create and manage study tasks.
-- Mark study tasks as completed.
-- Generate a student performance report.
-- Demonstrate Object-Oriented Programming concepts in Java.
-- Handle invalid inputs using validation and exception handling.
-- Store important information using text files.
+The Student Performance and Study Planner is a Java-based console application that provides a simple way for students to maintain their academic information, record subject marks, analyze performance, and organize study tasks.
 
-## Functional Modules
+## 2. Scope of the Project
 
-### 1. Student Management
-Allows the user to add, view, search, and delete student information.
+The project focuses on basic academic record management and study planning.
 
-### 2. Academic Performance
-Allows the user to add subject marks, view marks, calculate percentage, and determine grades.
+The application allows users to:
 
-### 3. Study Planner
-Allows the user to create study tasks, view tasks, mark tasks as completed, and delete tasks.
+- Manage student information
+- Add and view subject marks
+- Calculate academic performance
+- Identify strong and weak subjects
+- Create study tasks
+- Set task priorities
+- Mark study tasks as completed
+- Generate a performance report
+- Store information using text files
 
-### 4. Performance Analysis and Report
-Analyzes academic performance and generates a summary report containing student details, subject performance, grades, and study-task status.
+The project is designed as a command-line application and does not require a database or graphical interface.
 
-## Non-Functional Requirements
+## 3. Target Users
 
-- **Usability:** The application should provide a simple menu-driven console interface.
-- **Reliability:** Invalid inputs should be handled without terminating the application unexpectedly.
-- **Performance:** The application should respond quickly for normal student data.
-- **Maintainability:** The project should be divided into separate classes with clear responsibilities.
-- **Error Handling:** Invalid marks, IDs, priorities, and numeric inputs should be handled appropriately.
-- **Resource Efficiency:** The application should use simple data structures and text files without requiring a database.
+The primary target users are:
 
-## Technologies Used
+- College students
+- School students
+- Students who want to track academic performance
+- Students who want to organize study tasks
+
+## 4. Objectives
+
+- Provide a simple academic management system.
+- Track student information.
+- Record subject marks.
+- Calculate percentage and grades.
+- Analyze academic performance.
+- Help students organize study tasks.
+- Demonstrate Java Object-Oriented Programming concepts.
+- Demonstrate exception handling and file handling.
+- Provide a simple command-line based solution.
+
+## 5. High-Level Features
+
+### Student Management
+
+Users can add, view, search, and delete student records.
+
+### Academic Performance
+
+Users can add subject marks, view marks, calculate performance, and identify the best and focus subjects.
+
+### Study Planner
+
+Users can create study tasks, assign priorities, view tasks, complete tasks, and delete tasks.
+
+### Performance Analysis
+
+The application calculates overall percentage, grade, performance level, and provides a basic recommendation.
+
+### Report Generation
+
+The application generates a summary of student information, academic performance, and study tasks.
+
+### File Storage
+
+Student, subject, and study-task information can be stored using text files.
+
+## 6. Technologies Used
+
 - Java
 - Object-Oriented Programming
-- ArrayList
+- Inheritance
+- Polymorphism
 - Exception Handling
+- ArrayList
 - File Handling
-- Text File Storage
+- Git and GitHub
 
-## Expected Outcome
-The application provides a simple academic management system through which students can maintain their academic records, analyze their performance, and organize their study tasks.
+## 7. Expected Outcome
+
+The completed application provides students with a simple command-line tool for managing academic performance and organizing study activities while demonstrating the Java programming concepts learned in the course.
