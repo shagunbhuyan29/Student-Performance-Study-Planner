@@ -1,1 +1,2 @@
 # Study task data will be stored here
+1|JAVA|practice OOP|MEDIUM|false
